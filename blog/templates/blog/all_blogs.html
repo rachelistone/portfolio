@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+{% extends 'projects/base.html' %}
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>rachel has written {{blogs.count}} blogs </h2>
+
+{% for blog in blogs %}
+<a href="{% url 'blog:detail' blog.id %}">
+<p>
+    {{ blog.title }}<br>
+</a>
+    {{ blog.date|date:'M d'|upper }}<br>
+    {{ blog.content|truncatechars:20}}<br>
+    {% endfor %}
+</p>
+
+</body>
+</html>
+{% endblock %}
