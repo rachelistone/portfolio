@@ -1,38 +1,26 @@
 {% extends 'projects/base.html' %}
 {% block content %}
 
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>home</title>
-</head>
-<body>
+    <h1>Rachel Stone's website</h1>
 
-<h1>Rachel Stone's website</h1>
+    {% load static %}
 
-{% load static %}
+    <img src="{% static 'bits.jpg' %}" width="1000" ><br>
+    <a href="{% static 'Rache_stone_5 11.pdf' %}">resume</a><br>
 
-<img src="{% static 'bits.jpg' %}" width="1000" ><br>
-<a href="{% static 'Rache_stone_5 11.pdf' %}">resume</a><br>
+    <a href="{% url 'blog:blogs' %}">my blogs</a>
 
-<a href="{% url 'blog:blogs' %}">my blogs</a>
+    <h2>Projects</h2>
+    {% for project in projects %}
+    <p>
+        <h4>{{project.title}}</h4>
+        <img src="{{ project.picture.url }}" width=200px alt=""><br>
+        {{project.description}}<br>
+        {% if project.link %}
+             <a href="{{project.link}}">click to see the project source</a>
+        {% endif %}
+    </p>
+    {% endfor %}
+    <a href="http://www.linkedin.com/in/rachel-stone-3a148714b/" target="_blank"><img src="{% static 'linkedin.jpg' %}" alt="linkedin" width="100"></a>
 
-<h2>Projects</h2>
-{% for project in projects %}
-<p>
-    <h4>{{project.title}}</h4>
-    <img src="{{ project.picture.url }}" width=200px alt=""><br>
-    {{project.description}}<br>
-    {% if project.link %}
-         <a href="{{project.link}}">click to see the project source</a>
-    {% endif %}
-</p>
-{% endfor %}
-<a href="http://www.linkedin.com/in/rachel-stone-3a148714b/" target="_blank"><img src="{% static 'linkedin.jpg' %}" alt="linkedin" width="100"></a>
-
-</body>
-</html>
 {% endblock%}

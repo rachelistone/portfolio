@@ -1,8 +1,26 @@
 <!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>portfolio</title>
+</head>
+
+<style>
+.nav {
+    padding: 10px;
+    background-color: #66FF66;
+    width: 60%;
+    margin:0 auto;
+}
+</style>
+
 <html lang="en">
-<link rel="stylesheet" href="css/home.css">
-<body class="nav">
-navigation bar<br>
-{% block content %} {% endblock %}
-</body>
+    <body >
+
+        <p class="nav">navigation bar</p>
+        <br>
+
+        {% block content %} {% endblock %}
+
+    </body>
 </html>
