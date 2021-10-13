@@ -5,5 +5,5 @@ class Blog(models.Model):
     date = models.DateField()
     content = models.TextField()
 
-    def __str__(self):# to call the object in the database the field title
+    def __str__(self):# to call the object in the database at the field title
         return self.title

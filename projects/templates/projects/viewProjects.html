@@ -1,0 +1,14 @@
+{% extends 'projects/base.html' %}
+{% block content %}
+<h2>Projects</h2>
+    {% for project in projects %}
+    <p>
+        <h4>{{project.title}}</h4>
+        <img src="{{ project.picture.url }}" width=200px alt=""><br>
+        {{project.description}}<br>
+        {% if project.link %}
+             <a href="{{project.link}}">click to see the project source</a>
+        {% endif %}
+    </p>
+    {% endfor %}
+{% endblock%}

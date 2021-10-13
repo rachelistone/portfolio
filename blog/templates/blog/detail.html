@@ -1,16 +1,9 @@
 {% extends 'projects/base.html' %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
 the content of the blog:
     {{ blog.title }}<br>
     {{ blog.date }}<br>
     {{ blog.content|safe }}<br>
-</body>
-</html>
+
 {% endblock %}

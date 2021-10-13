@@ -5,3 +5,4 @@ class Project(models.Model):
     picture = models.ImageField()
     description = models.TextField()
     link = models.URLField(blank=True)
+    #file = models.ImageField(blank=True, upload_to='pdf')
